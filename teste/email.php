@@ -22,7 +22,7 @@ var_dump($respostaEnvioEmail);
             echo 'Email eviado com sucesso';
 
         } else {
-            throw new Exception("n„o foi possivel enviar o email");
+            throw new Exception("n√£o foi possivel enviar o email");
 
         }
     } catch (Exception $exc) {

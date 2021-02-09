@@ -135,7 +135,7 @@ if ($qtdPagamentos > 0 && empty($mensagemAlerta)) {
         include('modulos/extrato/conteudo_pagamento.php');
 
         $extrato = ob_get_clean();
-        $respostaEnvioEmail = mail($value['email'], 'Extrato Locação _ (' . utf8_decode($value['nome']) . ')', $extrato, $cabecalho);
+        $respostaEnvioEmail = mail($value['email'], 'Extrato LocaÃ§Ã£o _ (' . utf8_decode($value['nome']) . ')', $extrato, $cabecalho);
 
         if ($respostaEnvioEmail) {
 
@@ -157,7 +157,7 @@ if ($qtdPagamentos > 0 && empty($mensagemAlerta)) {
                 $mensagemAlerta .= "Mensagem para " . $value['nome'] . " - N?o enviado (numero celular N?o localizado) \\n";
             }
         } else {
-            $mensagemAlerta .= "Nâo foi possivel enviar o email para {$value['nome']}";
+            $mensagemAlerta .= "NÃ£o foi possivel enviar o email para {$value['nome']}";
         }
     }
 }
