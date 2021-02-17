@@ -6,15 +6,15 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: no-store, no-cache, must-revalidate");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
-header('Content-Type: text/html; charset=iso-8859-1');
+header('Content-Type: text/html; charset=UTF-8');
 
 if (isset($_SESSION['SISTEMA_codPessoa'])) {
     ?>
     <html>
-        <head><meta charset="windows-1252">
+        <head><meta charset="UTF-8">
 
             
-            <title>:: Tabakal Imóveis - SisGIM - Sistema de Gerenciamento de Imóveis.::</title>
+            <title>:: Tabakal ImÃ³veis - SisGIM - Sistema de Gerenciamento de ImÃ³veis.::</title>
 
             <link rel="stylesheet" type="text/css" href="ext-3.3.1/resources/css/ext-all-notheme.css" />
             <script type="text/javascript" src="ext-3.3.1/adapter/ext/ext-base.js"></script>
@@ -85,7 +85,7 @@ if (isset($_SESSION['SISTEMA_codPessoa'])) {
     ?>
     <script>
         $(document).ready(function () {
-            altura = $(document).height() - 130; //altura da página
+            altura = $(document).height() - 130; //altura da pï¿½gina
             $('#mapaFrame').attr('height', altura + 'px');
             atualizaQtdSms();
 
@@ -101,13 +101,13 @@ if (isset($_SESSION['SISTEMA_codPessoa'])) {
                         console.log(dados);
                         console.log(dados.msng);
                         if (dados.msng != '') {
-                            alert('Não foi possivel enviar os sms');
+                            alert('NÃ£o foi possivel enviar os sms');
                             alert(dados.msng);
                         }
                         atualizaQtdSms();
                     },
                     error: function () {
-                        alert('Não foi possivel enviar os sms');
+                        alert('NÃ£o foi possivel enviar os sms');
                     }
                 });
             });
@@ -125,14 +125,14 @@ if (isset($_SESSION['SISTEMA_codPessoa'])) {
                     $('#qtdSms').html('');
                     $('#qtdSms').append("Qtd. de Pagamentos: " + eval(data.qtdPagamentos));
                     $('#qtdSms').append("<Br>Qtd. de Fim Contratos: " + eval(data.qtdFimContratos));
-                    $('#qtdSms').append("<Br>Qtd. de Aniversários: " + eval(data.qtdAniversarios));
+                    $('#qtdSms').append("<Br>Qtd. de AniversÃ¡rios: " + eval(data.qtdAniversarios));
 
                     if ((data.qtdPagamentos + data.qtdFimContratos + data.qtdAniversarios) > 0) {
                         $('#btSms').fadeIn();
                     }
                 },
                 error: function () {
-                    $('#qtdSms').html('Não foi possivel atualizar os dados');
+                    $('#qtdSms').html('NÃ£o foi possivel atualizar os dados');
                 }
             });
             setTimeout('atualizaQtdSms()', 60000);
