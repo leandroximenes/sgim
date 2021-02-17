@@ -23,7 +23,7 @@ Ext.onReady(function () {
                         text: 'Gerenciar Contrato',
                         cls: '?',
                         handler: function () {
-                            if (!Ext.getCmp('janelaGerenciarContrato')) { //Verifica se a janela est� aberta
+                            if (!Ext.getCmp('janelaGerenciarContrato')) { //Verifica se a janela está aberta
                                 gerenciarContrato();
                             }
                         }
@@ -32,10 +32,10 @@ Ext.onReady(function () {
 
             var itensMenuImovel = new Ext.menu.Menu({
                 items: [{
-                        text: 'Gerenciar Im�vel',
+                        text: 'Gerenciar Imóvel',
                         cls: '?',
                         handler: function () {
-                            if (!Ext.getCmp('janelaCadastrarImovel')) { //Verifica se a janela est� aberta
+                            if (!Ext.getCmp('janelaCadastrarImovel')) { //Verifica se a janela está aberta
                                 gerenciarImovel()
                             }
                         }
@@ -47,7 +47,7 @@ Ext.onReady(function () {
                         text: 'Pagamentos',
                         cls: '?',
                         handler: function () {
-                            //if(!Ext.getCmp('janelaCadastrarImovel')){ //Verifica se a janela est� aberta
+                            //if(!Ext.getCmp('janelaCadastrarImovel')){ //Verifica se a janela está aberta
                             gerenciarPagamento(26)
                             //}
                         }
@@ -67,15 +67,15 @@ Ext.onReady(function () {
                 iconCls: 'botaoImovel',
                 enableToggle: true,
                 split: true,
-                text: '<b>Im�vel</b>'
+                text: '<b>Imóvel</b>'
             }
 
             var itensMenuUsuario = new Ext.menu.Menu({
                 items: [{
-                        text: 'Gerenciar Usu�rio',
+                        text: 'Gerenciar Usuário',
                         iconCls: 'menuUsuario',
                         handler: function () {
-                            if (!Ext.getCmp('janelaCadastrarImovel')) { //Verifica se a janela est� aberta
+                            if (!Ext.getCmp('janelaCadastrarImovel')) { //Verifica se a janela está aberta
                                 gerenciarUsuario()
                             }
                         }
@@ -83,7 +83,7 @@ Ext.onReady(function () {
                         text: 'Relacionar Grupo',
                         iconCls: 'manterUsuario',
                         handler: function () {
-                            if (!Ext.getCmp('perfisRelacionar')) { //Verifica se a janela est� aberta
+                            if (!Ext.getCmp('perfisRelacionar')) { //Verifica se a janela está aberta
                                 perfisRelacionar(0, '')
                             }
                         }
@@ -113,7 +113,7 @@ Ext.onReady(function () {
 
             if (id_perfil == 1)
                 arrayitensMenuRelatorios.push({
-                    text: 'Clientes em d�bito',
+                    text: 'Clientes em dêbito',
                     iconCls: '',
                     handler: function () {
                         window.open('modulos/relatorios/pagamentoAtrasoParcela.php');
@@ -122,7 +122,7 @@ Ext.onReady(function () {
 
             if (id_perfil == 1)
                 arrayitensMenuRelatorios.push({
-                    text: 'Tabakal em d�bito',
+                    text: 'Tabakal em dêbito',
                     iconCls: '',
                     handler: function () {
                         window.open('modulos/relatorios/repasseAtraso.php');
@@ -140,7 +140,7 @@ Ext.onReady(function () {
 
             if (id_perfil == 1)
                 arrayitensMenuRelatorios.push({
-                    text: 'Previs�o de Arrecada��o',
+                    text: 'Previsão de Arrecadação',
                     iconCls: '',
                     handler: function () {
                         window.open('modulos/relatorios/previsaoArrecadacao.php');
@@ -149,7 +149,7 @@ Ext.onReady(function () {
 
             if (id_perfil == 1)
                 arrayitensMenuRelatorios.push({
-                    text: 'Relat�rio de imposto de renda',
+                    text: 'Relatório de imposto de renda',
                     iconCls: '',
                     handler: function () {
                         window.open('modulos/relatorios/ImpostoRenda.php');
@@ -168,7 +168,7 @@ Ext.onReady(function () {
                             window.open('modulos/graficos/contratos_pie.html');
                         }
                     }, {
-                        text: 'Cidades/Im�veis',
+                        text: 'Cidades/Imóveis',
                         iconCls: '',
                         handler: function () {
                             window.open('modulos/graficos/cidades_barra.html');
@@ -181,7 +181,7 @@ Ext.onReady(function () {
                 iconCls: 'menuRelatorios',
                 enableToggle: true,
                 split: true,
-                text: '<b>Relat�rios</b>'
+                text: '<b>Relatórios</b>'
             }
 
             var menuGraficos = {
@@ -189,15 +189,15 @@ Ext.onReady(function () {
                 iconCls: 'menuGraficos',
                 enableToggle: true,
                 split: true,
-                text: '<b>Gr�ficos</b>'
+                text: '<b>Gráficos</b>'
             }
 
             var itensMenuRelatorios = new Ext.menu.Menu({
                 items: [{
-                        text: 'Relat�rio',
+                        text: 'Relatório',
                         iconCls: 'manterUsuario',
                         handler: function () {
-                            if (!Ext.getCmp('janelaCadastrarImovel')) { //Verifica se a janela est� aberta
+                            if (!Ext.getCmp('janelaCadastrarImovel')) { //Verifica se a janela está aberta
                                 gerenciarImovel()
                             }
                         }
@@ -209,7 +209,7 @@ Ext.onReady(function () {
                 iconCls: 'menuUsuario',
                 enableToggle: true,
                 split: true,
-                text: '<b>Usu�rio</b>'
+                text: '<b>Usuário</b>'
             }
 
             var itensMenuConfiguracoes = new Ext.menu.Menu({
@@ -230,7 +230,7 @@ Ext.onReady(function () {
                             }
                         }
                     }, {
-                        text: 'Gerenciar Profiss�o',
+                        text: 'Gerenciar Profissão',
                         iconCls: 'manterUsuario',
                         handler: function () {
                             if (!Ext.getCmp('janelaGerenciarProfissao')) {
@@ -275,7 +275,7 @@ Ext.onReady(function () {
                 iconCls: 'menuConfiguracoes',
                 enableToggle: true,
                 split: true,
-                text: '<b>Configura��es</b>'
+                text: '<b>Configurações</b>'
             }
 
             var itensMenuAcessoUsuario = {
@@ -293,7 +293,7 @@ Ext.onReady(function () {
                 iconCls: 'ic_ajuda',
                 enableToggle: true,
                 split: true,
-                text: 'Ol� <b>' + nomeUsuarioLogado + '</b>'
+                text: 'Olá <b>' + nomeUsuarioLogado + '</b>'
             }
 
             var barraMenus = new Ext.Toolbar({
@@ -367,7 +367,7 @@ Ext.onReady(function () {
                  }*/]
             }
 
-            //Viewport Principal, todas as abas est�o anexadas a ela
+            //Viewport Principal, todas as abas estão anexadas a ela
             var painelGeral = new Ext.Viewport({
                 layout: 'border',
                 items: [painelTopo, painelPrincipal]
