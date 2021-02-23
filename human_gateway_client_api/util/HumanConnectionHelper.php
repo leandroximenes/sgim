@@ -10,7 +10,7 @@
 class HumanConnectionHelper
 {
     /**
-     * Cria e testa uma conex√£o com um servidor
+     * Cria e testa uma conex„o com um servidor
      *
      * @param string $host
      * @return  resource fsockopen.

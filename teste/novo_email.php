@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $mail->Password = "atendimento";
         $mail->SetFrom("atendimento@tabakalimoveis.com.br", "TABAKAL");
         $mail->Subject = "Teste";
-        $mail->Body = "Testando o funcionamento do email. Nome teste: {$_POST['nome']}. Email enviado Ã s " . date('d/m/Y h:s');
+        $mail->Body = "Testando o funcionamento do email. Nome teste: {$_POST['nome']}. Email enviado às " . date('d/m/Y h:s');
         $mail->AddAddress($_POST['email']);
         if (!$mail->Send()) {
             echo "Mailer Error: " . $mail->ErrorInfo;
