@@ -5,7 +5,7 @@ header('Content-Type: text/html; charset=iso-8859-1');
 
 header("Content-type: application/vnd.ms-word");
 header("Content-type: application/force-download");
-header("Content-Disposition: attachment; filename=contrato_locacao_fiador_modelo.doc");
+header("Content-Disposition: attachment; filename=contrato_locacao_cred_pago.doc");
 header("Pragma: no-cache");
 
 $titulo = 'Relatório de Aniversariantes';
@@ -364,8 +364,18 @@ if (isset($_SESSION["SISTEMA_codPessoa"])) {
             <b>Parágrafo único:</b> Em caso de inobservância da proibição prevista no caput desta cláusula, o(s)(a) LOCATÁRIO(S)(A) não poderá(ão) exigir indenizações pelas benfeitorias que fizer no imóvel, sejam voluptuárias, úteis ou necessárias, e caso sejam realizadas, não lhe autorizarão o exercício do direito de retenção (art. 578 do Código Civil), ficando desde logo incorporadas ao imóvel.
         </div>
 
+
         <br/>    
-        <b>CLÁUSULA X – DA GARANTIA LOCATÍCIA</b>
+        <b>CLÁUSULA X ? DA GARANTIA LOCATÍCIA </b>
+        <br/>
+        <br/>
+        <p>O(A) Locatário(a) realizou a contratação da CREDPAGO SERVIÇOS DE COBRANÇA S/A., pessoa jurídica de direito privado, inscrita no CNPJ sob o nº 25.027.928/00001-90, com sede na Rua Abraham Lincol n° 263, Seminário, Curitiba/PR, a qual, se compromete a efetuar o paga mento de eventuais débitos relativos ao aluguel e demais encargos da presente locação que venham a ser inadimplidos pelo(a) Locatário(a), conforme condições e limitações constantes nos Termos e Condições Gerais dos Serviços CREDPAGO, que integram o presente Contrato como ANEXO I.<br />  As Partes declaram expressamente que estão cientes de todas as condições e limitações relativos à fiança prestada pela CREDPAGO SERVIÇOS DE COBRANÇA S/A., notadamente no tocante (i) ao valor máximo de sua responsabilidade, (ii) às limitações de sua responsabilidade, (iii) a o prazo de sua vigência, (iv) às condições para sua renovação, e (v) às hipóteses de sua exoneração.<br />  O(A) Locatário(a) declara(m) expressamente, ainda, que está ciente que em caso de exoneração da CREDPAGO SERVIÇ OS DE COBRANÇA S/A. da condição de fiadora, caberá a ele promover no prazo máximo de 30 (trinta) dias a substituição da garantia prestada, sob pena de infração contratual e ajuizamentos da competente ação de despejo.</p>
+        <br/>
+        <br/>
+
+
+        <br/>    
+        <b>CLÁUSULA XI – DA GARANTIA LOCATÍCIA</b>
         <br/>
         <br/>
         Assina(m) como fiador(es) e principal(is) pagador(es). 

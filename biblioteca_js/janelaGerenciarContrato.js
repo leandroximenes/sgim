@@ -237,6 +237,12 @@ function gerenciarContrato() {
                     handler: function () {
                         window.location = 'modulos/contratos/contrato_locacao_caucao_modelo.php?codContrato=' + codContrato;
                     }
+                }, {
+                    text: 'Contrato Cred Pagos',
+                    iconCls: 'botaoImprimir',
+                    handler: function () {
+                        window.location = 'modulos/contratos/contrato_locacao_credPago.php?codContrato=' + codContrato;
+                    }
                 },{
                     text: 'Kit de boas vindas',
                     iconCls: 'botaoImprimir',
