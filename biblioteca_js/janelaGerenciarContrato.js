@@ -238,7 +238,7 @@ function gerenciarContrato() {
                         window.location = 'modulos/contratos/contrato_locacao_caucao_modelo.php?codContrato=' + codContrato;
                     }
                 }, {
-                    text: 'Contrato Cred Pagos',
+                    text: 'Contrato CredPago',
                     iconCls: 'botaoImprimir',
                     handler: function () {
                         window.location = 'modulos/contratos/contrato_locacao_credPago.php?codContrato=' + codContrato;
