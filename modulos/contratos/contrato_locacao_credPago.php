@@ -591,59 +591,6 @@ if (isset($_SESSION["SISTEMA_codPessoa"])) {
         <br/>
 
 
-        <table width='600'>
-
-            <?php
-            $sql = sprintf("CALL procContratoFiadorSelecionar($codContrato)");
-            $rsFiador = $mySQL->runQuery($sql);
-
-            $rsQuant = $rsFiador->num_rows;
-
-            if ($rsQuant > 0) {
-
-                while ($rsFiadorLinha = mysqli_fetch_assoc($rsFiador)) {
-                    utf8_decode_array($rsFiadorLinha);
-                    $codPessoaEstadoCivil = $rsFiadorLinha['codPessoa'];
-
-                    if ($rsFiadorLinha['codEstadoCivil'] = 2) { //casado
-                        $sqlFiador = sprintf("CALL procPessoaConjugeListar($codPessoaEstadoCivil)");
-                        $rsConjugeFiador = $mySQL->runQuery($sqlFiador);
-                        $rsConjugeFiadorLinha = mysqli_fetch_assoc($rsConjugeFiador);
-                        utf8_decode_array($rsConjugeFiadorLinha);
-                    }
-                    ?>
-                    <tr>	
-                        <td align='center' width='50%' height='170'>
-                            ________________________________
-                            <br/>
-                            <b>FIADOR(A)</b>
-                            <br/>
-                        <?php echo ($rsFiadorLinha['nome']); ?>
-                            <br/>
-                            CPF nº <?php echo mascaraCpf($rsFiadorLinha['cpf']); ?> 	
-                        </td>
-            <?php
-            if ($rsConjugeFiadorLinha['nome'] <> "") {
-                ?>
-                            <td align='center' width='50%'>
-                                ________________________________
-                                <br/>
-                                <b>CÔNJUGE</b>
-                                <br/>
-                            <?php echo ($rsConjugeFiadorLinha['nome']); ?>
-                                <br/>
-                                CPF nº <?php echo mascaraCpf($rsConjugeFiadorLinha['cpf']); ?>  
-                            </td>
-                        <?php
-                    }
-                    ?>
-                    </tr>	
-            <?php
-        }
-    }
-    ?>
-
-        </table>
         <br/>
         <br/>
         <b>Testemunhas:</b>
