@@ -1,5 +1,6 @@
 <?php
-error_reporting(E_ERROR);
+error_reporting(E_ALL);
+ini_set("display_errors", 0);
 // Função que valida o CPF
 function validaCPF($cpf) { // Verifiva se o número digitado contém todos os digitos
     //$cpf = str_pad(ereg_replace('[^0-9]', '', $cpf), 11, '0', STR_PAD_LEFT);
