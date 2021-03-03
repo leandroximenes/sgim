@@ -9,7 +9,7 @@ include("modulos/diversos/util.php");
 date_default_timezone_set('America/Sao_Paulo');
 header('Content-Type: text/html; charset=iso-8859-1');
 
-//Altere a query abaixo colocando a tabela onde est?$)C"/(vo os telefones celulares
+//Altere a query abaixo colocando a tabela onde estão os telefones celulares
 $pagamento = $mySQL->runQuery("select pagamento.*, pessoa.nome, pessoa.email, telefone.ddd, telefone.telefone from pagamento 
 
 INNER JOIN contrato on contrato.codContrato = pagamento.codContrato
@@ -135,7 +135,7 @@ if ($qtdPagamentos > 0 && empty($mensagemAlerta)) {
         include('modulos/extrato/conteudo_pagamento.php');
 
         $extrato = ob_get_clean();
-        $respostaEnvioEmail = mail($value['email'], 'Extrato LocaÃ§Ã£o _ (' . utf8_decode($value['nome']) . ')', $extrato, $cabecalho);
+        $respostaEnvioEmail = mail($value['email'], 'Extrato Locação _ (' . utf8_decode($value['nome']) . ')', $extrato, $cabecalho);
 
         if ($respostaEnvioEmail) {
 
@@ -157,7 +157,7 @@ if ($qtdPagamentos > 0 && empty($mensagemAlerta)) {
                 $mensagemAlerta .= "Mensagem para " . $value['nome'] . " - N?o enviado (numero celular N?o localizado) \\n";
             }
         } else {
-            $mensagemAlerta .= "NÃ£o foi possivel enviar o email para {$value['nome']}";
+            $mensagemAlerta .= "Não foi possivel enviar o email para {$value['nome']}";
         }
     }
 }

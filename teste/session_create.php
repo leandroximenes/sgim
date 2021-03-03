@@ -1,5 +1,5 @@
 <?php 
 session_start(); 
 $_SESSION["teste"] = "teste de session";
-echo "seÃ§Ã£o criada: "  . $_SESSION["teste"];
+echo "seção criada: "  . $_SESSION["teste"];
 ?>

@@ -2,7 +2,7 @@
 
 /**
  * Classe abstrata com a responsabilidade de disponibilizar recursos
- * de comunicaÃ§Ã£o com o server API genÃ©ricos.
+ * de comunicação com o server API genéricos.
  *
  * @author Tiago
  * @abstract
@@ -74,7 +74,7 @@ abstract class HumanBaseService implements IHumanBaseService
     }
     
     /**
-     * MÃ©todo preparado para envio de mensagem
+     * Método preparado para envio de mensagem
      *
      * @param array $params
      * @param string $contentType

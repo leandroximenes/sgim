@@ -12,5 +12,5 @@ printf ("System status: %s\n", $mysqli->stat());
 
 $mysqli->close();
 
-echo 'ConexÃ£o estabelecida com sucesso';
+echo 'Conexão estabelecida com sucesso';
 ?>

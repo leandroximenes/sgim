@@ -6,7 +6,7 @@ header('Content-Type: text/html; charset=iso-8859-1');
 
 header("Content-type: application/vnd.ms-word");
 header("Content-type: application/force-download");
-header("Content-Disposition: attachment; filename=contrato_locacao_fiador_modelo.doc");
+header("Content-Disposition: attachment; filename=contrato_locacao_cred_pago.doc");
 header("Pragma: no-cache");
 
 $titulo = 'Relatório de Aniversariantes';
@@ -365,117 +365,14 @@ if (isset($_SESSION["SISTEMA_codPessoa"])) {
             <b>Parágrafo único:</b> Em caso de inobservância da proibição prevista no caput desta cláusula, o(s)(a) LOCATÁRIO(S)(A) não poderá(ão) exigir indenizações pelas benfeitorias que fizer no imóvel, sejam voluptuárias, úteis ou necessárias, e caso sejam realizadas, não lhe autorizarão o exercício do direito de retenção (art. 578 do Código Civil), ficando desde logo incorporadas ao imóvel.
         </div>
 
+
         <br/>    
-        <b>CLÁUSULA X – DA GARANTIA LOCATÍCIA</b>
+        <b>CLÁUSULA X - DA GARANTIA LOCATÍCIA </b>
         <br/>
         <br/>
-        Assina(m) como fiador(es) e principal(is) pagador(es). 
-        <br/>
-        <br/>
-
-    <?php
-    $cont = 1;
-    $sql = sprintf("CALL procContratoFiadorSelecionar($codContrato)");
-    
-    $rsFiador = $mySQL->runQuery($sql);
-
-    $rsQuant = $rsFiador->num_rows;
-
-    if ($rsQuant > 0) {
-        while ($rsFiadorLinha = mysqli_fetch_assoc($rsFiador)) {
-            utf8_decode_array($rsFiadorLinha);
-            $codPessoaEstadoCivil = $rsFiadorLinha['codPessoa'];
-	    
-            if ($rsFiadorLinha['estadoCivil'] == 'Casado') { //casado
-                $sqlFiador = sprintf("CALL procPessoaConjugeListar($codPessoaEstadoCivil)");
-                $rsConjugeFiador = $mySQL->runQuery($sqlFiador);
-                $rsConjugeFiadorLinha = mysqli_fetch_assoc($rsConjugeFiador);
-                $strConjugeFiador = "";
-                if (!empty($rsConjugeFiadorLinha['nome'])) {
-                    
-                    $idendidadeTratada = str_replace("-", "", str_replace(".", "", $rsConjugeFiadorLinha['rg']));
-                    if(is_int($idendidadeTratada)){
-                       $idendidadeTratada = number_format($idendidadeTratada, 0, ',', '.');
-                    }else{
-                        $idendidadeTratada = $rsConjugeFiadorLinha['rg'];
-                    }
-                    
-                    $strConjugeFiador = " casado(a) com <b>" . $rsConjugeFiadorLinha['nome'] . "</b>, portador(a) da carteira de identidade " . $idendidadeTratada . ' ' . $rsConjugeFiadorLinha['orgaoExpedidor'] . ", inscrito(a) no CPF sob nº  " . mascaraCpf($rsConjugeFiadorLinha['cpf']);
-                }
-               
-            }
-            else{
-            	$strConjugeFiador = '' ;
-            	
-            }
-
-            ?>				
-                <div class="clJustificar"><b><?php  echo $cont; ?>° FIADOR(A): <?php echo ($rsFiadorLinha['nome']); ?></b>, <?php echo ($rsFiadorLinha['nacionalidade']); ?>(a), <?php echo ($rsFiadorLinha['profissao']); ?>, 
-                portador(a) da carteira de identidade <?php echo number_format(str_replace('.', '', $rsFiadorLinha['rg']), 0, ',', '.') . ' ' . $rsFiadorLinha['orgaoExpedidor']; ?>, 
-                inscrito(a) no CPF sob nº  <?php echo mascaraCpf($rsFiadorLinha['cpf']);  ?>, <?php echo isset($rsFiadorLinha['estadocivil']) ? $rsFiadorLinha['estadocivil'] : '';
-             echo ($strConjugeFiador);?>,  
-                residente(s) e domiciliado(a)(s) no(a) <?php echo ($rsFiadorLinha['endereco']); ?> - <?php echo ($rsFiadorLinha['bairro']); ?> -  
-                <?php echo ($rsFiadorLinha['cidade']); ?>, CEP: <?php echo mascaraCep($rsFiadorLinha['cep']); ?>.
-                </div>
-                
-                <br/>
-                
-
-                <?php
-                $cont ++;
-                
-            }
-            
-        }
-
-        ?>
-
         <div class="clJustificar">
-            <b>Parágrafo Primeiro:</b> Assume(m) solidariamente o(s)(a) fiador(es)(a) acima qualificado(s)(a) com o(s)(a) LOCATÁRIO(S)(A), o compromisso de fielmente cumprir(em) todas as cláusulas e condições do presente contrato até a efetiva devolução das chaves, responsabilizando-se por todas as informações da qualificação acima, especialmente as relativas ao estado civil.
+            <p>O(A) Locatário(a) realizou a contratação da CREDPAGO SERVIÇOS DE COBRANÇA S/A., pessoa jurídica de direito privado, inscrita no CNPJ sob o nº 25.027.928/00001-90, com sede na Rua Abraham Lincol n° 263, Seminário, Curitiba/PR, a qual, se compromete a efetuar o paga mento de eventuais débitos relativos ao aluguel e demais encargos da presente locação que venham a ser inadimplidos pelo(a) Locatário(a), conforme condições e limitações constantes nos Termos e Condições Gerais dos Serviços CREDPAGO, que integram o presente Contrato como ANEXO I.</p><p>   As Partes declaram expressamente que estão cientes de todas as condições e limitações relativos à fiança prestada pela CREDPAGO SERVIÇOS DE COBRANÇA S/A., notadamente no tocante (i) ao valor máximo de sua responsabilidade, (ii) às limitações de sua responsabilidade, (iii) a o prazo de sua vigência, (iv) às condições para sua renovação, e (v) às hipóteses de sua exoneração.</p><p>  O(A) Locatário(a) declara(m) expressamente, ainda, que está ciente que em caso de exoneração da CREDPAGO SERVIÇ OS DE COBRANÇA S/A. da condição de fiadora, caberá a ele promover no prazo máximo de 30 (trinta) dias a substituição da garantia prestada, sob pena de infração contratual e ajuizamentos da competente ação de despejo.</p>
         </div>
-
-        <br/>
-
-        <div class="clJustificar">
-            <b>Parágrafo Segundo:</b> Renuncia(m) expressamente o(s) fiador(es), por este ato, à faculdade que lhe(s) confere(m) o art. 835 do Código Civil (Lei 10.406/02), não podendo alegar em juízo ou fora dele, que tenha havido notificação enviada à ADMINISTRADORA capaz de, por si só, exonerá-lo(s)(a) da garantia prestada.
-        </div>
-
-        <br/>
-
-        <div class="clJustificar">
-            <b>Parágrafo Terceiro:</b> A garantia fidejussória compreenderá quaisquer acréscimos, reajustes ou acessórios da dívida principal, inclusive todas as despesas judiciais, honorários advocatícios (20 %) e demais cominações, até a final liquidação de quaisquer ações movidas em desfavor do(s)(a) LOCATÁRIO(S)(A), em decorrência do presente contrato.
-        </div>
-
-        <br/>
-
-        <div class="clJustificar">
-            <b>Parágrafo Quarto:</b> O(s)(A) fiador(es)(a) renuncia(m) expressamente ao benefício da prévia execução dos bens dos afiançados (arts. 827 e 828, inc.I, do CC) e não poderá(ão) sob qualquer pretexto exonerar(em)-se desta fiança, que é prestada sem limitação de tempo, até a definitiva resolução do contrato e suas implicações, mesmo que este se prorrogue automaticamente por prazo indeterminado, estipulações estas em relação às quais o(s)(a) fiador(es)(a) concorda(m) expressamente, não podendo futuramente alegar que suas obrigações se encerrariam ao final do primeiro período contratual.
-        </div>
-
-        <br/>
-
-        <div class="clJustificar">
-            <b>Parágrafo Quinto:</b> O não cumprimento das obrigações expressas neste contrato pelo(s)(a) LOCATÁRIO(S)(A) ou pelo(s)(a) seu(s)(a) fiador(es)(a) faculta à ADMINISTRADORA a solicitação de inclusão de seu(s) nome(s) no cadastro de devedores do Serviço de Proteção ao Crédito (SPC), ou qualquer outra entidade com finalidade semelhante. O cancelamento da inscrição se dará após a quitação dos débitos existentes, correndo por conta do(s)(a) LOCATÁRIO(S)(A) e seu(s)/sua(s) fiador(es)(a) todas as despesas, bem como a responsabilidade pela baixa do registro.
-        </div>
-
-        <br/>
-
-        <div class="clJustificar">
-            <b>Parágrafo Sexto:</b> Em caso de morte, incapacidade civil, falência, insolvência ou inidoneidade moral ou financeira do(s)(a) fiador(es)(a), poderá a ADMINISTRADORA exigir a sua substituição, a qual deverá ser cumprida no prazo máximo de 15 (quinze) dias, a contar da comunicação ao(s)(à) LOCATÁRIO(S)(A). A falta de cumprimento desta exigência, cuja satisfação ficará subordinada à aprovação da ADMINISTRADORA, constituirá justa causa para rescisão do contrato, aplicando-se a penalidade prevista na Cláusula V, até a efetiva devolução do imóvel.
-        </div>
-
-        <br/>
-
-        <div class="clJustificar">
-            <b>Parágrafo Sétimo:</b> Na hipótese de extinção ou perda de garantia no curso da locação, enquanto não ocorrer à substituição, o aluguel deverá ser pago antecipadamente, na data prevista.
-        </div>
-
-        <br/>
-
-        <div class="clJustificar">
-            <b>Parágrafo Oitavo:</b> Obriga(m)-se o(s)(a) fiador(es)(a) a informar qualquer alteração de endereço sob pena de se considerar válidas, para todos os efeitos legais, as correspondências que lhe forem encaminhadas para o endereço acima indicado.
-        </div>
-
         <br/>    
         <b>CLÁUSULA XI – DO ABANDONO DO IMÓVEL</b>
         <br/>
@@ -694,59 +591,6 @@ if (isset($_SESSION["SISTEMA_codPessoa"])) {
         <br/>
 
 
-        <table width='600'>
-
-            <?php
-            $sql = sprintf("CALL procContratoFiadorSelecionar($codContrato)");
-            $rsFiador = $mySQL->runQuery($sql);
-
-            $rsQuant = $rsFiador->num_rows;
-
-            if ($rsQuant > 0) {
-
-                while ($rsFiadorLinha = mysqli_fetch_assoc($rsFiador)) {
-                    utf8_decode_array($rsFiadorLinha);
-                    $codPessoaEstadoCivil = $rsFiadorLinha['codPessoa'];
-
-                    if ($rsFiadorLinha['codEstadoCivil'] = 2) { //casado
-                        $sqlFiador = sprintf("CALL procPessoaConjugeListar($codPessoaEstadoCivil)");
-                        $rsConjugeFiador = $mySQL->runQuery($sqlFiador);
-                        $rsConjugeFiadorLinha = mysqli_fetch_assoc($rsConjugeFiador);
-                        utf8_decode_array($rsConjugeFiadorLinha);
-                    }
-                    ?>
-                    <tr>	
-                        <td align='center' width='50%' height='170'>
-                            ________________________________
-                            <br/>
-                            <b>FIADOR(A)</b>
-                            <br/>
-                        <?php echo ($rsFiadorLinha['nome']); ?>
-                            <br/>
-                            CPF nº <?php echo mascaraCpf($rsFiadorLinha['cpf']); ?> 	
-                        </td>
-            <?php
-            if ($rsConjugeFiadorLinha['nome'] <> "") {
-                ?>
-                            <td align='center' width='50%'>
-                                ________________________________
-                                <br/>
-                                <b>CÔNJUGE</b>
-                                <br/>
-                            <?php echo ($rsConjugeFiadorLinha['nome']); ?>
-                                <br/>
-                                CPF nº <?php echo mascaraCpf($rsConjugeFiadorLinha['cpf']); ?>  
-                            </td>
-                        <?php
-                    }
-                    ?>
-                    </tr>	
-            <?php
-        }
-    }
-    ?>
-
-        </table>
         <br/>
         <br/>
         <b>Testemunhas:</b>

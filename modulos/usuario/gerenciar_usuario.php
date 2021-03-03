@@ -175,7 +175,7 @@ if(isset($_SESSION["SISTEMA_codPessoa"])){
 						`es`.`codEstadoCivil` AS `codEstadoCivil`,
 						`es`.`nome` AS `estadoCivil`,
 						`ps`.`nome` AS `profissao`,
-						_utf8 'F√≠sica' AS `tipoPessoa`,
+						_utf8 'FÌ≠sica' AS `tipoPessoa`,
 						`pf`.`enderecoTrabalho` AS `enderecoTrabalho`,
 						`pf`.`bairroTrabalho` AS `bairroTrabalho`,
 						`pf`.`cidadeTrabalho` AS `cidadeTrabalho`,
@@ -330,7 +330,7 @@ if(isset($_SESSION["SISTEMA_codPessoa"])){
 							_utf8 '' AS `codEstadoCivil`,
 							_utf8 '' AS `estadoCivil`,
 							_utf8 '' AS `profissao`,
-							_utf8 'Jur√≠dica' AS `tipoPessoa`,
+							_utf8 'JurÌ≠dica' AS `tipoPessoa`,
 							_utf8 '' AS `enderecoTrabalho`,
 							_utf8 '' AS `bairroTrabalho`,
 							_utf8 '' AS `cidadeTrabalho`,
@@ -816,7 +816,7 @@ if(isset($_SESSION["SISTEMA_codPessoa"])){
 		$orgaoExpedidorConjuge          = (string)(isset($_POST['orgaoExpedidorConjuge']) ? $_POST['orgaoExpedidorConjuge'] : "");
 		$profissaoConjuge               = (int)(isset($_POST['profissaoConjuge']) ? $_POST['profissaoConjuge'] : "");
 							
-		if($codTipoPessoa == 1){ //Pessoa F√≠sica
+		if($codTipoPessoa == 1){ //Pessoa FÌ≠sica
 			$sql = sprintf("call procPessoaFisicaCadastrar($codPessoa,'$nome','$email','$senha','$endereco',$cep,'$bairro','$cidade','$uf','$cpf',$rg,$estadoCivil,$codProfissao,'$orgaoExpedidor',$renda,$outroRendimento, '$empresaTrabalho','$enderecoTrabalho', '$bairroTrabalho', '$cidadeTrabalho', '$ufTrabalho', '$cepTrabalho', '$dataNascimento','$nacionalidade','$observacao','$celular','$residencial','$comercial','$nomeConjuge','$nacionalidadeConjuge','$cpfConjuge','$dataNascimentoConjuge','$identidadeConjuge','$orgaoExpedidorConjuge',$rendaConjuge,$outroRendimentoConjuge,$profissaoConjuge, '$sexo', $tituloEleitor)");
 		}else{
 			$sql = sprintf("call procPessoaJuridicaCadastrar($codPessoa,'$nome','$email','$senha','$endereco',$cep,'$bairro','$cidade','$uf','$cnpj',$ie,'$observacao', '$nomeRepresentante', $estadoCivilRepresentante, $profissaoRepresentante, '$dataNascimentoRepresentante', '$cpfRepresentante', '$identidadeRepresentante', '$orgaoExpedidorRepresentante', '$rendaRepresentante', '$outroRendimentorepresentante','$celular','$residencial','$comercial')");
@@ -834,7 +834,7 @@ if(isset($_SESSION["SISTEMA_codPessoa"])){
 		}
 	}
 
-	//verifica se j√° existe um email igual cadastrado no banco
+	//verifica se j· existe um email igual cadastrado no banco
 	function emailVerificar(){
 	
 		if($_POST['codPessoa'] == 0 || $_POST['codPessoa'] == ""){
@@ -848,7 +848,7 @@ if(isset($_SESSION["SISTEMA_codPessoa"])){
 			$rsQtde = $rs 	  -> num_rows;
 			
 			if($rsQtde > 0){
-				echo "{success:true}"; //email j√° existe
+				echo "{success:true}"; //email j· existe
 			}else{
 				echo "{success:false}"; //email ainda n existe
 			}
@@ -859,7 +859,7 @@ if(isset($_SESSION["SISTEMA_codPessoa"])){
 
 	/*----------------------------------------------------------------------------------------------------------------------
 	------------------------------------------------------------------------------------------------------------------------
-									Recebe o parametro que indica que fun√ß√£o ir√° ser executada
+									Recebe o parametro que indica que funÁ„o ir· ser executada
 	------------------------------------------------------------------------------------------------------------------------
 	--------------------------------------------------------------------------------------------------------------------- */
 
@@ -923,7 +923,7 @@ if(isset($_SESSION["SISTEMA_codPessoa"])){
 		case "fiadorSelecionar":
 			fiadorSelecionar();
 			break;
-		//rotina que verifica se o email j√° existe no banco
+		//rotina que verifica se o email j· existe no banco
 		case "emailVerificar":
 			emailVerificar();
 			break;

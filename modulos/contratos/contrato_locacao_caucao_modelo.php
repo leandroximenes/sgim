@@ -1,5 +1,6 @@
 <?php
 session_start();
+ini_set("display_errors", 0);
 header('Content-Type: text/html; charset=iso-8859-1');
 
 header("Content-type: application/vnd.ms-word");
@@ -190,12 +191,12 @@ th{
 			<br/>
 			<br/>
 			<div class="clJustificar">
-				O prazo do presente contrato de locação é o determinado na alínea “D”, com seu término também fixado na mesma alínea, independentemente de qualquer aviso, interpelação judicial ou extrajudicial, não se havendo como presumida a falta de oposição da ADMINISTRADORA o fato de findo o prazo estipulado, continuar(em) o(s)(a) LOCATÁRIO(S)(A) na posse do imóvel, por qualquer motivo.
+				O prazo do presente contrato de locação é o determinado na alínea ?D?, com seu término também fixado na mesma alínea, independentemente de qualquer aviso, interpelação judicial ou extrajudicial, não se havendo como presumida a falta de oposição da ADMINISTRADORA o fato de findo o prazo estipulado, continuar(em) o(s)(a) LOCATÁRIO(S)(A) na posse do imóvel, por qualquer motivo.
 			</div>
 
 			<br/>
 			<div class="clJustificar">
-				<b>Parágrafo Primeiro:</b> Estabelece-se que após o transcurso de 12 (doze) meses da vigência do contrato, caso haja interesse por parte do(s)(a) LOCATÁRIO(S)(A) na devolução do imóvel, poderá(ão) fazê-lo sem o pagamento da multa de que trata a Cláusula V, desde que notifique(m) sua intenção a ADMINISTRADORA com antecedência mínima de 30 (trinta) dias para a devolução do imóvel.
+			<b>Parágrafo Primeiro:</b> Estabelece-se que após o transcurso de 12 (doze) meses da vigência do contrato, caso haja interesse por parte do(s)(a) LOCATÁRIO(S)(A) na devolução do imóvel, poderá(ão) fazê-lo sem o pagamento da multa de que trata a Cláusula V, desde que notifique(m) sua intenção a ADMINISTRADORA com antecedência mínima de 30 (trinta) dias para a devolução do imóvel. <b>Caso ocorra a devolução anterior aos 30(trinta) dias, arcará o locatário com custos da locação e seus acessórios até o final do prazo do aviso. Se ultrapassado os 30(trinta) dias, o aluguel e acessórios serão calculados proporcionalmente aos dias excedidos. Caso ocorra a devolução anterior ao período de 12 (doze) meses o(s)(a) LOCATÁRIO(S)(A) pagará(ão) a multa pactuada na Cláusula V proporcional aos meses faltantes.</b>
 			</div>
 			
 			<br/>

@@ -62,7 +62,7 @@ class HumanMultipleSend extends HumanBaseService
     const CALLBACK_FINAL_STATUS        = 1;
     
     /**
-     * Retorno do callback, retorno de status intermedi√°rio e final da mensagem
+     * Retorno do callback, retorno de status intermedi·rio e final da mensagem
      * @var integer
      */
     const CALLBACK_INTERMEDIARY_STATUS = 2;

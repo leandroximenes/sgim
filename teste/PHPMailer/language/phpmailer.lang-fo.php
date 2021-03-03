@@ -2,7 +2,7 @@
 /**
  * Faroese PHPMailer language file: refer to English translation for definitive list
  * @package PHPMailer
- * @author Dávur Sørensen <http://www.profo-webdesign.dk>
+ * @author D�vur Sørensen <http://www.profo-webdesign.dk>
  */
 
 $PHPMAILER_LANG['authenticate']         = 'SMTP feilur: Kundi ikki góðkenna.';
@@ -13,7 +13,7 @@ $PHPMAILER_LANG['encoding']             = 'Ókend encoding: ';
 $PHPMAILER_LANG['execute']              = 'Kundi ikki útføra: ';
 $PHPMAILER_LANG['file_access']          = 'Kundi ikki tilganga fílu: ';
 $PHPMAILER_LANG['file_open']            = 'Fílu feilur: Kundi ikki opna fílu: ';
-$PHPMAILER_LANG['from_failed']          = 'fylgjandi Frá/From adressa miseydnaðist: ';
+$PHPMAILER_LANG['from_failed']          = 'fylgjandi Fr�/From adressa miseydnaðist: ';
 $PHPMAILER_LANG['instantiate']          = 'Kuni ikki instantiera mail funktión.';
 //$PHPMAILER_LANG['invalid_address']      = 'Invalid address: ';
 $PHPMAILER_LANG['mailer_not_supported'] = ' er ikki supporterað.';

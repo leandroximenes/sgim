@@ -102,12 +102,12 @@ header('Content-Type: text/html; charset=iso-8859-1');
         });
         $(".date").datepicker({
             dateFormat: 'dd/mm/yy',
-            dayNames: ['Domingo', 'Segunda', 'TerÃ§a', 'Quarta', 'Quinta', 'Sexta', 'SÃ¡bado'],
+            dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
             dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
-            dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'SÃ¡b', 'Dom'],
+            dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
             monthNames: ['Janeiro', 'Fevereiro', 'Mar&ccedil;o', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
             monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-            nextText: 'PrÃ³ximo',
+            nextText: 'Próximo',
             prevText: 'Anterior'
         });
 
@@ -221,7 +221,7 @@ if (isset($_SESSION["SISTEMA_codPessoa"])) {
 
             <?php
         } else {
-            echo 'NÃ£o existem Pagamentos em atraso!';
+            echo 'Não existem Pagamentos em atraso!';
         }
     }
 } else {

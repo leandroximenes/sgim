@@ -9,7 +9,7 @@ include("modulos/diversos/util.php");
 date_default_timezone_set('America/Sao_Paulo');
 header('Content-Type: text/html; charset=iso-8859-1');
 
-//Altere a query abaixo colocando a tabela onde est?$)C"/(vo os telefones celulares
+//Altere a query abaixo colocando a tabela onde estão os telefones celulares
 $pagamento = $mySQL->runQuery("select pagamento.*, pessoa.nome, pessoa.email, telefone.ddd, telefone.telefone from pagamento 
 INNER JOIN contrato on contrato.codContrato = pagamento.codContrato
 INNER JOIN pessoa ON (contrato.codPessoaLocador = pessoa.codPessoa AND pessoa.status = 1)
@@ -116,7 +116,7 @@ if ($qtdPagamentos > 0 && empty($mensagemAlerta)) {
     $cabecalho = "MIME-Version: 1.0\n";
     $cabecalho .= "Content-Type: text/html; charset=UTF-8\n";
     $cabecalho .= "From: TABAKAL <atendimento@tabakalimoveis.com.br>\n";
-    $cabecalho .= "Bcc: extratos@tabakalimoveis.com.br, tabakal.imoveis@hotmail.com, tabakalimoveis@hotmail.com, gneivamachado@gmail.com";
+    $cabecalho .= "Bcc: tabakal.imoveis@hotmail.com, extratos@tabakalimoveis.com.br";
 
     $codPagamento = "";
 
@@ -153,10 +153,10 @@ if ($qtdPagamentos > 0 && empty($mensagemAlerta)) {
                     $mensagemAlerta .= "Mensagem para " . $value['nome'] . " - " . $exc->getTraceAsString() . "\\n";
                 }
             } else {
-                $mensagemAlerta .= "Mensagem para " . $value['nome'] . " - N?o enviado (numero celular N?o localizado) \\n";
+                $mensagemAlerta .= "Mensagem para " . $value['nome'] . " - Não enviado (numero celular Não localizado) \\n";
             }
         } else {
-            $mensagemAlerta .= "Nâo foi possivel enviar o email para {$value['nome']}";
+            $mensagemAlerta .= "Não foi possivel enviar o email para {$value['nome']}";
         }
     }
 }

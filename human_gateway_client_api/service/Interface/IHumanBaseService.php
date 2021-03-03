@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Interface de implementaÃ§Ã£o para a base de serviÃ§os de comunicaÃ§Ã£o
+ * Interface de implementação para a base de serviços de comunicação
  * com o server API
  *
  * @author Tiago
