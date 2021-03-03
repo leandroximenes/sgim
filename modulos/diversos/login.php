@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_DEPRECATED);
 session_start(); 
 
 	include("../../conexao/conexao.php");
