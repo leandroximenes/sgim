@@ -29,17 +29,21 @@ function alteraValoresTabela($tableName, $pkName) {
 
     $mySQL->runQuery("SELECT * FROM $tableName");
     $result = $mySQL->getArrayResult();
+    $sql_ok = '';
     foreach ($result as $resultKey => $colunas) {
-        $SQL = "UPDATE $tableName SET ";
+        $sql_ok = "UPDATE $tableName SET ";
         foreach ($colunas as $colunasName => $colunaVal) {
             if (!is_null($colunaVal) && $pkName != $colunasName) {
-                $SQL .= "$colunasName = '$colunaVal', ";
+                $decoded = utf8_decode($colunaVal);
+                $decoded = utf8_decode($decoded);
+                $decoded = utf8_decode($decoded);
+                $sql_ok .= "$colunasName = '$decoded', ";
             }
         }
-        $SQL .= "WHERE $pkName = {$colunas[$pkName]}";
-        $SQL = str_replace(", WHERE", "  WHERE", $SQL);
+        $sql_ok .= "WHERE $pkName = {$colunas[$pkName]}";
+        $sql_ok = str_replace(", WHERE", "  WHERE", $sql_ok);
 
-        $mysqli = new mysqli("localhost", "u672794128_admin", "Tabakal&sgim01", $database);
+        $mysqli = new mysqli("localhost", "u672794128_admin", "Tabakal&sgim01", "sgim_ok");
 
         if ($mysqli->connect_errno) {
             echo "Failed to connect to MySQL: " . $mysqli->connect_error;
@@ -49,10 +53,12 @@ function alteraValoresTabela($tableName, $pkName) {
         // Change character set to utf8
         $mysqli->set_charset("utf8");
 
-        if(!$mysqli->query($SQL)){
-            throw new Exception("Erro ao processar a query" . $SQ);
-            
-        }
+        echo "<pre>";
+        echo $sql_ok;
+        echo "</pre><br />";
+        //if(!$mysqli->query($sql_ok)){
+            //throw new Exception($mysqli->error);
+        //}
         $mysqli->close();
     }
     echo "tudo certo com a tabela $tableName<br /><br />";
